@@ -1,18 +1,16 @@
-const express = require("express");
-require("dotenv").config(); 
-
-const app = express();
-const router=express.Router();
-
-
-const port = process.env.PORT || 5000;
-
-// Simple API endpoint
-app.get("/api/contacts", (req, res) => {
-  res.status(200).json("Get all contacts");
+import express from "express";
+const app=express();
+const port=6969;
+app.listen(port,()=>console.log(`server is running on port:${port}`));
+app.get("/",(req,res)=>{
+  res.json({msg:"hello guyss!"});
 });
-
-// Start server
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
-});
+//crud functionalities of movies
+//c for creating
+app.post('/movies',()=>{});
+//r for reading
+app.get('/movies',()=>{});
+//u for updating
+app.put('/movies/:id',()=>{});
+//d for deleting
+app.post('/movies/:id',()=>{});
